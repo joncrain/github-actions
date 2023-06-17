@@ -1,0 +1,49 @@
+name: macOS pkg build
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'pkg_example/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+        matrix:
+          pkg_version: ["prd", "test", "dev"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+    #   - name: Import Signing Cert
+    #     uses: apple-actions/import-codesign-certs@8f1f4d258d6deeb3f85395452e1d14c59ce2957e
+    #     with:
+    #       p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
+    #       p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
+
+      - name: Find and Replace
+        run: |
+          /usr/bin/sed -i '' 's/pkg_version/${{ matrix.pkg_version }}/g' "pkg_example/foo/payload/private/var/tmp/foo.txt"
+          /usr/bin/sed -i '' 's/pkg_version/${{ matrix.pkg_version }}/g' "pkg_example/build-info.plist"
+
+      - name: Run munkipkg
+        id: munkipkg
+        uses: joncrain/munkipkg-action@v1.5
+        with:
+          pkg_subdir: pkg_example
+
+      - name: Create Release
+        uses: softprops/action-gh-release@c9b46fe7aad9f02afd89b12450b780f52dacfb2d
+        with:
+          files: ${{ steps.munkipkg.outputs.filepath }}
+          tag_name: ${{ steps.munkipkg.outputs.tag }}
+
+    #   - name: SimpleMDM Upload
+    #     if: env.SIMPLEMDM_API_KEY != null
+    #     run: |
+    #       curl https://a.simplemdm.com/api/v1/apps \
+    #       -F binary=@${{ steps.munkipkg.outputs.filepath }} \
+    #       -u ${{ secrets.SIMPLEMDM_API_KEY }}:
