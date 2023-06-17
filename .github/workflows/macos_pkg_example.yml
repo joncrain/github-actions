@@ -27,7 +27,7 @@ jobs:
       - name: Find and Replace
         run: |
           /usr/bin/sed -i '' 's/pkg_version/${{ matrix.pkg_version }}/g' "pkg_example/foo/payload/private/var/tmp/foo.txt"
-          /usr/bin/sed -i '' 's/pkg_version/${{ matrix.pkg_version }}/g' "pkg_example/build-info.plist"
+          /usr/bin/sed -i '' 's/pkg_version/${{ matrix.pkg_version }}/g' "pkg_example/foo/build-info.plist"
 
       - name: Run munkipkg
         id: munkipkg
