@@ -33,7 +33,7 @@ jobs:
         id: munkipkg
         uses: joncrain/munkipkg-action@v1.5
         with:
-          pkg_subdir: pkg_example
+          pkg_subdir: pkg_example/foo
 
       - name: Create Release
         uses: softprops/action-gh-release@c9b46fe7aad9f02afd89b12450b780f52dacfb2d
