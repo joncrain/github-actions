@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/homebysix/pre-commit-macadmin
+    rev: v1.12.4
+    hooks:
+      - id: check-munkipkg-buildinfo
+  - repo: https://github.com/sirosen/check-jsonschema
+    rev: 0.22.0
+    hooks:
+      - id: check-github-workflows
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace

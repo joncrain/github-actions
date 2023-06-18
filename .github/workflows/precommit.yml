@@ -1,0 +1,10 @@
+name: Precommit
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  run_precommit:
+    uses: joncrain/github-actions/.github/workflows/reusable-precommit.yml@main
