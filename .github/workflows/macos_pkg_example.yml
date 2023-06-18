@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'pkg_example/**'
+      - 'pkg_example/foo/**'
   workflow_dispatch:
 
 jobs:
@@ -40,6 +40,8 @@ jobs:
         with:
           files: ${{ steps.munkipkg.outputs.filepath }}
           tag_name: ${{ steps.munkipkg.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     #   - name: SimpleMDM Upload
     #     if: env.SIMPLEMDM_API_KEY != null
