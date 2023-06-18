@@ -36,7 +36,7 @@ jobs:
           pkg_subdir: pkg_example/foo
 
       - name: Create Release
-        uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
+        uses: softprops/action-gh-release@c9b46fe7aad9f02afd89b12450b780f52dacfb2d
         with:
           files: ${{ steps.munkipkg.outputs.filepath }}
           tag_name: ${{ steps.munkipkg.outputs.tag }}
