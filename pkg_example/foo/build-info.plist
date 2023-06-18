@@ -9,7 +9,7 @@
 	<key>install_location</key>
 	<string>/</string>
 	<key>name</key>
-	<string>foo-${version}.pkg_version.pkg</string>
+	<string>foo-${version}-pkg_version.pkg</string>
 	<key>ownership</key>
 	<string>recommended</string>
 	<key>postinstall_action</key>
