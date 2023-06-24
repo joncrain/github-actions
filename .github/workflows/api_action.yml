@@ -2,7 +2,6 @@ name: API Endpoint
 
 on: 
   repository_dispatch:
-  workflow_dispatch:
   
 jobs:
   build:
