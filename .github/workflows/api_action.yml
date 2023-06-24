@@ -1,0 +1,13 @@
+name: API Endpoint
+
+on: 
+  repository_dispatch:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Response
+        run: |
+          echo "${{ github.event.client_payload.example-key }}"
