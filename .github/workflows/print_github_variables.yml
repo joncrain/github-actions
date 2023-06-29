@@ -1,4 +1,4 @@
-name: Print Variables
+name: Print GitHub Variables
 
 on:
   workflow_dispatch
@@ -12,7 +12,7 @@ jobs:
         run: |
           echo "CI: $CI"
           echo "GITHUB_ACTION: $GITHUB_ACTION"
-          echo "GITHUB_ACTION_PATH: $GITHUB_ACTION_PATH"
+          echo "GITHUB_ACTION_PATH: $GITHUB_ACTION_PATH" # This property is only supported in composite actions.
           echo "GITHUB_ACTION_REPOSITORY: $GITHUB_ACTION_REPOSITORY"
           echo "GITHUB_ACTIONS: $GITHUB_ACTIONS"
           echo "GITHUB_ACTOR: $GITHUB_ACTOR"
