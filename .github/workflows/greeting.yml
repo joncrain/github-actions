@@ -12,6 +12,9 @@ jobs:
     env:
       Greeting: Hello
     steps:
+      - name: Set Day of Week
+        id: set_day
+        run: echo "DAY_OF_WEEK=$(date +%A)" >> $GITHUB_ENV
       - name: Greetings
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
