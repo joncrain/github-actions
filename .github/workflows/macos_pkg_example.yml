@@ -31,7 +31,7 @@ jobs:
 
       - name: Run munkipkg
         id: munkipkg
-        uses: joncrain/munkipkg-action@v1.5
+        uses: joncrain/munkipkg-action@main
         with:
           pkg_subdir: pkg_example/foo
 
