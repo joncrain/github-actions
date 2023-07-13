@@ -43,9 +43,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    #   - name: SimpleMDM Upload
-    #     if: env.SIMPLEMDM_API_KEY != null
-    #     run: |
-    #       curl https://a.simplemdm.com/api/v1/apps \
-    #       -F binary=@${{ steps.munkipkg.outputs.filepath }} \
-    #       -u ${{ secrets.SIMPLEMDM_API_KEY }}:
+      - name: SimpleMDM Upload
+        if: env.SIMPLEMDM_API_KEY != null
+        run: |
+          curl https://a.simplemdm.com/api/v1/apps \
+          -F binary=@${{ steps.munkipkg.outputs.filepath }} \
+          -u ${{ secrets.SIMPLEMDM_API_KEY }}:
