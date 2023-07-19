@@ -1,8 +1,8 @@
 name: API Endpoint
 
-on: 
+on:
   repository_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
