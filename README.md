@@ -14,7 +14,9 @@
 
 ## Project Links:
 
-- automunki: https://github.com/joncrain/automunki
+- examples from this repo: https://github.com/joncrain/github-actions/actions
+- munkipkg-action: https://github.com/marketplace/actions/munkipkg-action
+- automunki (i.e. autopkg on GitHub Runner): https://github.com/joncrain/automunki
 
 ## Find me:
 
