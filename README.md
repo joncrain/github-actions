@@ -1,9 +1,6 @@
 ## Streamline Your macOS Administration with GitHub Actions - MacAdmins 2023
 
-- Slides: (soon)
-- Slack Channel for discussion: #psumac-207
-  - https://macadmins.slack.com/archives/C62CUHCMA
-  - Join slack: [https://www.macadmins.org/](https://www.macadmins.org/)
+- [Slides](https://github.com/joncrain/github-actions/blob/main/Github%20Actions%20Slides.pdf)
 - Google Docs for Note taking:
   - https://docs.google.com/document/d/1983w4wQtlzqHle3oWO8VctPMO17aG0wrqYygHU4VTZQ/edit
 - Session Feedback:
