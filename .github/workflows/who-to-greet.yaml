@@ -16,3 +16,6 @@ jobs:
       - name: Greeting
         run: |
           echo "Hello ${{ inputs.who-to-greet }}!"
+      - name: Goodbye
+        run: |
+          echo "Goodbye ${{ env.GITHUB_TRIGGERING_ACTOR }}!"
