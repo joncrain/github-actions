@@ -1,4 +1,4 @@
-name: Hello World
+name: Hello Someone
 
 on:
   workflow_dispatch:
@@ -18,4 +18,4 @@ jobs:
           echo "Hello ${{ inputs.who-to-greet }}!"
       - name: Goodbye
         run: |
-          echo "Goodbye ${{ env.GITHUB_TRIGGERING_ACTOR }}!"
+          echo "Goodbye ${{ github.actor }}!"
